@@ -1,0 +1,181 @@
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.heading {
+    background-color: rgb(89, 151, 172);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.top_menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+}
+
+.main_part_info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.image_style {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    ;
+}
+
+.left_part {
+    width: 140%;
+    padding-right: 350px;
+    align-self: center;
+}
+
+
+
+.storage {
+    display: grid;
+    grid-template-areas:
+        'i1 i2'
+        'i3 i4'
+        'i5 i6'
+        'i7 i8';
+    grid-gap: 3vw;
+    width: 100%;
+    align-items: stretch;
+
+}
+
+.cat_img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    justify-content: space-between;
+}
+
+
+.cat_img_1 {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+
+}
+
+.catalogue_element {
+    align-self: center;
+    margin-top: auto;
+    border-style: solid;
+    height: 100%;
+    border-color: blue;
+    border-radius: 3px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.articul {
+    text-align: center;
+}
+
+.name {
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    background: rgb(30, 30, 91);
+    color: white;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+.cart_heading {
+    background-color: rgb(89, 151, 172);
+    text-align: center;
+}
+
+.button:hover {
+    background: black;
+}
+
+.choice {
+    text-align: center;
+}
+
+.button_1 {
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    background: rgb(30, 30, 91);
+    color: white;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+
+.button_1:hover {
+    background: rgb(124, 124, 219);
+}
+
+.summ {
+    text-align: center;
+}
+
+.cart {
+    text-align: center;
+    line-height: 3;
+}
+
+.end_shop {
+    text-align: center;
+    text-shadow: 2px 4px 3px rgba(61, 23, 148, 0.3);
+}
+
+.tv_buttons {
+    text-align: center;
+    background: rgb(30, 30, 91);
+    color: white;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.div_buttons_style {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.active,
+.collapsible:hover {
+    background-color: rgb(135, 135, 163);
+  
+    
+}
+
+.input_address {
+    max-height: 0;
+    overflow: hidden;
+    margin-right: 20px;
+    padding: 0 18px;
+}
+
+.catalogue_element_1 {
+    align-self: center;
+    margin-top: auto;
+    border-style: solid;
+    height: 100%;
+    border-color: blue;
+    border-radius: 3px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    max-height: 0;
+}

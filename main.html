@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <ul class="top_menu">
+                <li> <a href="#">Главная</a></li>
+                <li> <a href="#">Каталог </a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main_part container">
+        <div class="main_part_info">
+            <div class="left_part">
+                <h1> Добро пожаловать в Shop Shop!</h1>
+                <h2> Выбирай все, что нужно, мы поможем </h2>
+            </div>
+            <div class="right_part">
+                <img class="image_style" src="person-adding-clothes-to-cart-closeup-for-online-shopping-campaign.jpg"
+                    alt="Shop_pic">
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div>
+        <h3 class="end_shop"> Сделайте Ваш выбор</h3>
+    </div>
+
+    <div class="catalogue container">
+
+        <h1 class="heading"> Каталог товаров</h1>
+
+        <div class="storage container">
+
+            <div class="catalogue_element element1">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757575</p>
+                    <p class="name">TV_LG</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/LG.jpg" alt="i1"> </div>
+                <p class="button" id="el1"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el2">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757576</p>
+                    <p class="name">TV_Samsung</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Samsung.jpg" alt="i2"> </div>
+                <p class="button" id="el2"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el3">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757577</p>
+                    <p class="name">TV_Sony</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Sony.jpg" alt="i3"> </div>
+                <p class="button" id="el3"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el4">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757578</p>
+                    <p class="name">TV_Dexp</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Dexp.jpg" alt="i4"> </div>
+                <p class="button" id="el4"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el5">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757579</p>
+                    <p class="name">TV_Mi</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Mi.jpg" alt="i5"> </div>
+                <p class="button" id="el5"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el6">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757580</p>
+                    <p class="name">TV_Hyundai</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Huyindai.jpg" alt="i6"> </div>
+                <p class="button" id="el6"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el7">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757581</p>
+                    <p class="name">TV_Xiaomi</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Xiaomi.jpg" alt="i7"> </div>
+                <p class="button" id="el7"> Купить </p>
+            </div>
+
+            <div class="catalogue_element el8">
+                <div class="upper_part_goods">
+                    <p class="articul"> Артикул: 65757582</p>
+                    <p class="name">TV_Skyline</p>
+                </div>
+                <div class="cat_img"> <img class="cat_img_1" src="pics/Skyline.jpg" alt="i8"> </div>
+                <p class="button" id="el8"> Купить </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart" id="cart">
+        <h1 class="container heading collapsible"> Корзина </h1>
+        <br>
+      
+    </div>
+
+    
+    <div class="address" id="address">
+        <h1 class="container heading collapsible"> Адрес доставки </h1>
+        <p class="input_address container" id="input_address"><input type="text" class="container" placeholder="Введите адрес"></p>
+    </div>
+        <div class="address" id="comments">
+            <h1 class="container heading collapsible"> Комментарии </h1>
+            <p class="input_address container" ><input type="text" class="container" placeholder="Ваш комментария"></p>
+        </div>
+
+        <div class="delivery" id="delivery">
+            <h1 class="container heading collapsible">Рассчет стоимости доставки</h1>
+            <p class="button" id="deliv_button"> Рассчитать </p>
+            
+        </div>
+
+
+        <script>
+
+//Функция формирования заказа
+function order_check () {
+    var name=prompt("Введите имя");
+    var s_name=prompt("Введите фамилию");
+    var price_for_km=3.78;
+    function delivery_price() {
+        distance=prompt("Введите количество километров");
+        return price_for_km*distance;
+    };
+    var final_text="Укажаемый "+name+s_name+"Стоимость доставки Вашего заказа по будет равна " +delivery_price()+ " рублей";
+    return final_text;
+};
+
+//клик по формированию доставки
+var deliv_press = document.getElementById("deliv_button");
+deliv_press.addEventListener("click", funct_delivery, false);
+function funct_delivery (event) {
+    var del_div = document.createElement("div");
+                del_div.classList = "catalogue_element";
+                del_div.id = "deliv_text";
+                del_div.innerHTML = order_check();
+                delivery.appendChild(del_div); 
+};
+
+
+//Сворачивание меню
+            let call = document.getElementsByClassName('collapsible');
+            for (let i = 0; i < call.length; i++) {
+                call[i].addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    let content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight=null;
+                    } else {
+                        content.style.maxHeight=content.scrollHeight+ 'px';
+                    };              
+                });
+            };
+
+            var summ_array = [];
+//Телевизор LG
+            var TV_1 = document.getElementById("el1");
+            TV_1.addEventListener("click", tv1_to_cart, false);
+            function tv1_to_cart(event) {
+                var price_1 = 345;
+                //блок для выбранной модели
+                var div1 = document.createElement("div");
+                div1.classList = "catalogue_element";
+                div1.id = "tv1_text";
+                div1.innerHTML = "Вы выбрали телевизор Телевизор LG";
+                cart.appendChild(div1);
+
+                //блок для кнопок
+                var div1_buttons = document.createElement("div");
+                div1_buttons.classList = "div1_buttons_style";
+                div1_buttons.id = "div1.buttons";
+                cart.appendChild(div1_buttons);
+
+                //Кнопка количество
+                var TV1_button = document.createElement("p");
+                TV1_button.classList = "tv_buttons";
+                TV1_button.id = "TV1_number";
+                TV1_button.innerHTML = "Укажите количество";
+                div1_buttons.appendChild(TV1_button);
+
+                //кнопка удаления
+                var TV1_button_del = document.createElement("p");
+                TV1_button_del.classList = "tv_buttons";
+                TV1_button_del.id = "TV1_del";
+                TV1_button_del.innerHTML = "Удалить";
+                div1_buttons.appendChild(TV1_button_del);
+
+                //Клик на количество
+                var tv1_quantity = document.getElementById("TV1_number");
+                var tv1_cart = document.createElement("p");
+                tv1_cart.id = "tv1_text";
+                div1.appendChild(tv1_cart);
+                tv1_quantity.addEventListener("click", summ_tv1, false);
+                function summ_tv1(event) {
+                    var tv1_quantity = prompt('Введите количество');
+                    summ_tv1 = tv1_quantity * price_1;
+                    summ_array.push(summ_tv1);
+                    tv1_cart.innerHTML = "Вы выбрали телевизор LG. Количество: " + tv1_quantity + " на сумму: " + summ_tv1 + " рублей";
+                    div1.appendChild(tv1_cart);
+
+                };
+                //Клик на удаление
+                var tv1_delete = document.getElementById("TV1_del");
+                tv1_delete.addEventListener("click", delete_tv1, false);
+                function delete_tv1(event) {
+                    var description1 = document.getElementById("tv1_text");
+                    description1.remove();
+                    var description_1 = document.getElementById("div1.buttons");
+                    description_1.remove();
+                };
+            };
+
+            //Телевизор Samsung
+            var TV_2 = document.getElementById("el2");
+            TV_2.addEventListener("click", tv2_to_cart, false);
+            function tv2_to_cart(event) {
+                var price_2 = 634.2;
+                //блок для выбранной модели
+                var div2 = document.createElement("div");
+                div2.classList = "catalogue_element";
+                div2.id = "tv2_text";
+                div2.innerHTML = "Вы выбрали телевизор Телевизор Samsung";
+                cart.appendChild(div2);
+
+                //блок для кнопок
+                var div2_buttons = document.createElement("div");
+                div2_buttons.classList = "div2_buttons_style";
+                div2_buttons.id = "div2.buttons";
+                cart.appendChild(div2_buttons);
+
+                //Кнопка количество
+                var TV2_button = document.createElement("p");
+                TV2_button.classList = "tv_buttons";
+                TV2_button.id = "TV2_number";
+                TV2_button.innerHTML = "Укажите количество";
+                div2_buttons.appendChild(TV2_button);
+
+                //кнопка удаления
+                var TV2_button_del = document.createElement("p");
+                TV2_button_del.classList = "tv_buttons";
+                TV2_button_del.id = "TV2_del";
+                TV2_button_del.innerHTML = "Удалить";
+                div2_buttons.appendChild(TV2_button_del);
+
+                //Клик на количество
+                var tv2_quantity = document.getElementById("TV2_number");
+                var tv2_cart = document.createElement("p");
+                tv2_cart.id = "tv2_text";
+                div2.appendChild(tv2_cart);
+                tv2_quantity.addEventListener("click", summ_tv2, false);
+                function summ_tv2(event) {
+                    var tv2_quantity = prompt('Введите количество');
+                    summ_tv2 = tv2_quantity * price_2;
+                    tv2_cart.innerHTML = "Вы выбрали телевизор Samsung. Количество: " + tv2_quantity + " на сумму: " + summ_tv2.toFixed(2) + " рублей";
+                    div2.appendChild(tv2_cart);
+                };
+                //Клик на удаление
+                var tv2_delete = document.getElementById("TV2_del");
+                tv2_delete.addEventListener("click", delete_tv2, false);
+                function delete_tv2(event) {
+                    var description2 = document.getElementById("tv2_text");
+                    description2.remove();
+                    var description_2 = document.getElementById("div2.buttons");
+                    description_2.remove();
+                };
+            };
+
+            //Телевизор Sony
+            var TV_3 = document.getElementById("el3");
+            TV_3.addEventListener("click", tv3_to_cart, false);
+            function tv3_to_cart(event) {
+                var price_3 = 518.4;
+                //блок для выбранной модели
+                var div3 = document.createElement("div");
+                div3.classList = "catalogue_element";
+                div3.id = "tv3_text";
+                div3.innerHTML = "Вы выбрали телевизор Телевизор Sony";
+                cart.appendChild(div3);
+
+                //блок для кнопок
+                var div3_buttons = document.createElement("div");
+                div3_buttons.classList = "div3_buttons_style";
+                div3_buttons.id = "div3.buttons";
+                cart.appendChild(div3_buttons);
+
+                //Кнопка количество
+                var TV3_button = document.createElement("p");
+                TV3_button.classList = "tv_buttons";
+                TV3_button.id = "TV3_number";
+                TV3_button.innerHTML = "Укажите количество";
+                div3_buttons.appendChild(TV3_button);
+
+                //кнопка удаления
+                var TV3_button_del = document.createElement("p");
+                TV3_button_del.classList = "tv_buttons";
+                TV3_button_del.id = "TV3_del";
+                TV3_button_del.innerHTML = "Удалить";
+                div3_buttons.appendChild(TV3_button_del);
+
+                //Клик на количество
+                var tv3_quantity = document.getElementById("TV3_number");
+                var tv3_cart = document.createElement("p");
+                tv3_cart.id = "tv3_text";
+                div3.appendChild(tv3_cart);
+                tv3_quantity.addEventListener("click", summ_tv3, false);
+                function summ_tv3(event) {
+                    var tv3_quantity = prompt('Введите количество');
+                    summ_tv3 = tv3_quantity * price_3;
+                    tv3_cart.innerHTML = "Вы выбрали телевизор Sony. Количество: " + tv3_quantity + " на сумму: " + summ_tv3.toFixed(2) + " рублей";
+                    div3.appendChild(tv3_cart);
+                };
+                //Клик на удаление
+                var tv3_delete = document.getElementById("TV3_del");
+                tv3_delete.addEventListener("click", delete_tv3, false);
+                function delete_tv3(event) {
+                    var description3 = document.getElementById("tv3_text");
+                    description3.remove();
+                    var description_3 = document.getElementById("div3.buttons");
+                    description_3.remove();
+                };
+            };
+
+            //Телевизор Dexp
+            var TV_4 = document.getElementById("el4");
+            TV_4.addEventListener("click", tv4_to_cart, false);
+            function tv4_to_cart(event) {
+                var price_4 = 316;
+                //блок для выбранной модели
+                var div4 = document.createElement("div");
+                div4.classList = "catalogue_element";
+                div4.id = "tv4_text";
+                div4.innerHTML = "Вы выбрали телевизор Телевизор Dexp";
+                cart.appendChild(div4);
+
+                //блок для кнопок
+                var div4_buttons = document.createElement("div");
+                div4_buttons.classList = "div4_buttons_style";
+                div4_buttons.id = "div4.buttons";
+                cart.appendChild(div4_buttons);
+
+                //Кнопка количество
+                var TV4_button = document.createElement("p");
+                TV4_button.classList = "tv_buttons";
+                TV4_button.id = "TV4_number";
+                TV4_button.innerHTML = "Укажите количество";
+                div4_buttons.appendChild(TV4_button);
+
+                //кнопка удаления
+                var TV4_button_del = document.createElement("p");
+                TV4_button_del.classList = "tv_buttons";
+                TV4_button_del.id = "TV4_del";
+                TV4_button_del.innerHTML = "Удалить";
+                div4_buttons.appendChild(TV4_button_del);
+
+                //Клик на количество
+                var tv4_quantity = document.getElementById("TV4_number");
+                var tv4_cart = document.createElement("p");
+                tv4_cart.id = "tv4_text";
+                div4.appendChild(tv4_cart);
+                tv4_quantity.addEventListener("click", summ_tv4, false);
+                function summ_tv4(event) {
+                    var tv4_quantity = prompt('Введите количество');
+                    summ_tv4 = tv4_quantity * price_4;
+                    tv4_cart.innerHTML = "Вы выбрали телевизор Dexp. Количество: " + tv4_quantity + " на сумму: " + summ_tv4.toFixed(2) + " рублей";
+                    div4.appendChild(tv4_cart);
+                };
+                //Клик на удаление
+                var tv4_delete = document.getElementById("TV4_del");
+                tv4_delete.addEventListener("click", delete_tv4, false);
+                function delete_tv4(event) {
+                    var description4 = document.getElementById("tv4_text");
+                    description4.remove();
+                    var description_4 = document.getElementById("div4.buttons");
+                    description_4.remove();
+                };
+            };
+
+            //Телевизор Mi
+            var TV_5 = document.getElementById("el5");
+            TV_5.addEventListener("click", tv5_to_cart, false);
+            function tv5_to_cart(event) {
+                var price_5 = 316;
+                //блок для выбранной модели
+                var div5 = document.createElement("div");
+                div5.classList = "catalogue_element";
+                div5.id = "tv5_text";
+                div5.innerHTML = "Вы выбрали телевизор Телевизор Mi";
+                cart.appendChild(div5);
+
+                //блок для кнопок
+                var div5_buttons = document.createElement("div");
+                div5_buttons.classList = "div5_buttons_style";
+                div5_buttons.id = "div5.buttons";
+                cart.appendChild(div5_buttons);
+
+                //Кнопка количество
+                var TV5_button = document.createElement("p");
+                TV5_button.classList = "tv_buttons";
+                TV5_button.id = "TV5_number";
+                TV5_button.innerHTML = "Укажите количество";
+                div5_buttons.appendChild(TV5_button);
+
+                //кнопка удаления
+                var TV5_button_del = document.createElement("p");
+                TV5_button_del.classList = "tv_buttons";
+                TV5_button_del.id = "TV5_del";
+                TV5_button_del.innerHTML = "Удалить";
+                div5_buttons.appendChild(TV5_button_del);
+
+                //Клик на количество
+                var tv5_quantity = document.getElementById("TV5_number");
+                var tv5_cart = document.createElement("p");
+                tv5_cart.id = "tv5_text";
+                div5.appendChild(tv5_cart);
+                tv5_quantity.addEventListener("click", summ_tv5, false);
+                function summ_tv5(event) {
+                    var tv5_quantity = prompt('Введите количество');
+                    summ_tv5 = tv5_quantity * price_5;
+                    tv5_cart.innerHTML = "Вы выбрали телевизор Mi. Количество: " + tv5_quantity + " на сумму: " + summ_tv5.toFixed(2) + " рублей";
+                    div5.appendChild(tv5_cart);
+                };
+                //Клик на удаление
+                var tv5_delete = document.getElementById("TV5_del");
+                tv5_delete.addEventListener("click", delete_tv5, false);
+                function delete_tv5(event) {
+                    var description5 = document.getElementById("tv5_text");
+                    description5.remove();
+                    var description_5 = document.getElementById("div5.buttons");
+                    description_5.remove();
+                };
+            };
+
+
+            //Телевизор Hyundai
+            var TV_6 = document.getElementById("el6");
+            TV_6.addEventListener("click", tv6_to_cart, false);
+            function tv6_to_cart(event) {
+                var price_6 = 235.5;
+                //блок для выбранной модели
+                var div6 = document.createElement("div");
+                div6.classList = "catalogue_element";
+                div6.id = "tv6_text";
+                div6.innerHTML = "Вы выбрали телевизор Телевизор Hyundai";
+                cart.appendChild(div6);
+
+                //блок для кнопок
+                var div6_buttons = document.createElement("div");
+                div6_buttons.classList = "div6_buttons_style";
+                div6_buttons.id = "div6.buttons";
+                cart.appendChild(div6_buttons);
+
+                //Кнопка количество
+                var TV6_button = document.createElement("p");
+                TV6_button.classList = "tv_buttons";
+                TV6_button.id = "TV6_number";
+                TV6_button.innerHTML = "Укажите количество";
+                div6_buttons.appendChild(TV6_button);
+
+                //кнопка удаления
+                var TV6_button_del = document.createElement("p");
+                TV6_button_del.classList = "tv_buttons";
+                TV6_button_del.id = "TV6_del";
+                TV6_button_del.innerHTML = "Удалить";
+                div6_buttons.appendChild(TV6_button_del);
+
+                //Клик на количество
+                var tv6_quantity = document.getElementById("TV6_number");
+                var tv6_cart = document.createElement("p");
+                tv6_cart.id = "tv6_text";
+                div6.appendChild(tv6_cart);
+                tv6_quantity.addEventListener("click", summ_tv6, false);
+                function summ_tv6(event) {
+                    var tv6_quantity = prompt('Введите количество');
+                    summ_tv6 = tv6_quantity * price_6;
+                    tv6_cart.innerHTML = "Вы выбрали телевизор Hyundai. Количество: " + tv6_quantity + " на сумму: " + summ_tv6.toFixed(2) + " рублей";
+                    div6.appendChild(tv6_cart);
+                };
+                //Клик на удаление
+                var tv6_delete = document.getElementById("TV6_del");
+                tv6_delete.addEventListener("click", delete_tv6, false);
+                function delete_tv6(event) {
+                    var description6 = document.getElementById("tv6_text");
+                    description6.remove();
+                    var description_6 = document.getElementById("div6.buttons");
+                    description_6.remove();
+                };
+            };
+
+            //Телевизор Xiaomi
+            var TV_7 = document.getElementById("el7");
+            TV_7.addEventListener("click", tv7_to_cart, false);
+            function tv7_to_cart(event) {
+                var price_7 = 435.6;
+                //блок для выбранной модели
+                var div7 = document.createElement("div");
+                div7.classList = "catalogue_element";
+                div7.id = "tv7_text";
+                div7.innerHTML = "Вы выбрали телевизор Телевизор Xiaomi";
+                cart.appendChild(div7);
+
+                //блок для кнопок
+                var div7_buttons = document.createElement("div");
+                div7_buttons.classList = "div7_buttons_style";
+                div7_buttons.id = "div7.buttons";
+                cart.appendChild(div7_buttons);
+
+                //Кнопка количество
+                var TV7_button = document.createElement("p");
+                TV7_button.classList = "tv_buttons";
+                TV7_button.id = "TV7_number";
+                TV7_button.innerHTML = "Укажите количество";
+                div7_buttons.appendChild(TV7_button);
+
+                //кнопка удаления
+                var TV7_button_del = document.createElement("p");
+                TV7_button_del.classList = "tv_buttons";
+                TV7_button_del.id = "TV7_del";
+                TV7_button_del.innerHTML = "Удалить";
+                div7_buttons.appendChild(TV7_button_del);
+
+                //Клик на количество
+                var tv7_quantity = document.getElementById("TV7_number");
+                var tv7_cart = document.createElement("p");
+                tv7_cart.id = "tv7_text";
+                div7.appendChild(tv7_cart);
+                tv7_quantity.addEventListener("click", summ_tv7, false);
+                function summ_tv7(event) {
+                    var tv7_quantity = prompt('Введите количество');
+                    summ_tv7 = tv7_quantity * price_7;
+                    tv7_cart.innerHTML = "Вы выбрали телевизор Xiaomi. Количество: " + tv7_quantity + " на сумму: " + summ_tv7.toFixed(2) + " рублей";
+                    div7.appendChild(tv7_cart);
+                };
+                //Клик на удаление
+                var tv7_delete = document.getElementById("TV7_del");
+                tv7_delete.addEventListener("click", delete_tv7, false);
+                function delete_tv7(event) {
+                    var description7 = document.getElementById("tv7_text");
+                    description7.remove();
+                    var description_7 = document.getElementById("div7.buttons");
+                    description_7.remove();
+                };
+            };
+
+            //Телевизор Skyline
+            var TV_8 = document.getElementById("el8");
+            TV_8.addEventListener("click", tv8_to_cart, false);
+            function tv8_to_cart(event) {
+                var price_8 = 255.6;
+                //блок для выбранной модели
+                var div8 = document.createElement("div");
+                div8.classList = "catalogue_element";
+                div8.id = "tv8_text";
+                div8.innerHTML = "Вы выбрали телевизор Телевизор Skyline";
+                cart.appendChild(div8);
+
+                //блок для кнопок
+                var div8_buttons = document.createElement("div");
+                div8_buttons.classList = "div8_buttons_style";
+                div8_buttons.id = "div8.buttons";
+                cart.appendChild(div8_buttons);
+
+                //Кнопка количество
+                var TV8_button = document.createElement("p");
+                TV8_button.classList = "tv_buttons";
+                TV8_button.id = "TV8_number";
+                TV8_button.innerHTML = "Укажите количество";
+                div8_buttons.appendChild(TV8_button);
+
+                //кнопка удаления
+                var TV8_button_del = document.createElement("p");
+                TV8_button_del.classList = "tv_buttons";
+                TV8_button_del.id = "TV8_del";
+                TV8_button_del.innerHTML = "Удалить";
+                div8_buttons.appendChild(TV8_button_del);
+
+                //Клик на количество
+                var tv8_quantity = document.getElementById("TV8_number");
+                var tv8_cart = document.createElement("p");
+                tv8_cart.id = "tv8_text";
+                div8.appendChild(tv8_cart);
+                tv8_quantity.addEventListener("click", summ_tv8, false);
+                function summ_tv8(event) {
+                    var tv8_quantity = prompt('Введите количество');
+                    summ_tv8 = tv8_quantity * price_8;
+                    tv8_cart.innerHTML = "Вы выбрали телевизор Skyline. Количество: " + tv8_quantity + " на сумму: " + summ_tv8.toFixed(2) + " рублей";
+                    div8.appendChild(tv8_cart);
+                };
+                //Клик на удаление
+                var tv8_delete = document.getElementById("TV8_del");
+                tv8_delete.addEventListener("click", delete_tv8, false);
+                function delete_tv8(event) {
+                    var description8 = document.getElementById("tv8_text");
+                    description8.remove();
+                    var description_8 = document.getElementById("div8.buttons");
+                    description_8.remove();
+                };
+            };
+</script>
+
+
+</body>
+
+</html>
